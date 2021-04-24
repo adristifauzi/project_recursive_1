@@ -17,3 +17,32 @@ def tree(h, a):
 
 tree(100,60)
 t.done()
+
+#koch snowflake
+from turtle import *
+
+def koch (order, size):
+    if order == 0:
+        forward (size)
+    else:
+        koch (order-1, size / 3)
+        left (60)
+        koch (order-1, size / 3)
+        right ( 120)
+        koch (order-1, size / 3)
+        left (60)
+        koch (order-1, size / 3)
+
+def main ():
+    up ()
+    goto (-100,0)
+    down ()
+    n = int (input ( 'Recursion depth:'))
+    a = int (input ('Side length:'))
+    koch (n, a)
+    right(120)
+    koch(n, a)
+    right(120)
+    koch(n, a)
+
+main ()
